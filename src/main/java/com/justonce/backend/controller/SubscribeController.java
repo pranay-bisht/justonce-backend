@@ -5,10 +5,21 @@ import com.justonce.backend.repository.SubscriberRepository;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(
+    origins = {
+        "http://localhost:3000",
+        "https://justonce-frontend.vercel.app"
+    },
+    allowedHeaders = "*",
+    methods = {
+        RequestMethod.POST,
+        RequestMethod.OPTIONS
+    }
+)
 public class SubscribeController {
 
     private final SubscriberRepository repository;
