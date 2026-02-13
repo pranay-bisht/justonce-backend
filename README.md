@@ -51,5 +51,3 @@ No user behavior tracking or profiling is performed.
 - **Scheduling**: Spring Scheduler
 
 ---
-
-## 📦 Project Structure
